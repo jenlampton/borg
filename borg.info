@@ -13,6 +13,7 @@ stylesheets[screen][] = css/patterns.css
 stylesheets[screen][] = css/components.css
 stylesheets[screen][] = css/ckeditor-iframe.css
 stylesheets[screen][] = css/menu-dropdown.theme.css
+stylesheets[screen][] = css/menu-toggle.theme.css
 
 ; Stylesheets to be added in the rich-text editor:
 ckeditor_stylesheets[] = css/base.css

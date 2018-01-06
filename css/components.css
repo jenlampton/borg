@@ -6,7 +6,7 @@
 
 a.site-name {
   display: block;
-  font-size: 2.125rem;/* 34px */
+  font-size: 2.125rem; /* 34px */
   font-weight: 200;
   letter-spacing: -.04em;
   float: left;
@@ -17,14 +17,11 @@ a.logo {
   width: 40px;
   box-sizing: border-box;
   margin-left: 10px;
-  margin-right: 50px;
 }
-
-/*******************************************************************************
- * Body links
- ******************************************************************************/
-.field-name-body a {
-  text-decoration: underline;
+@media (min-width: 34em) { /* 544px @ 16px font size -- SM */
+  a.logo {
+    _margin-right: 50px;
+  }
 }
 
 /*******************************************************************************
@@ -32,8 +29,9 @@ a.logo {
  ******************************************************************************/
 .borg-greeting {
   text-align: right;
+  padding-right: 15px;
 }
-.borg-greeting ul {
+.borg-greeting ul.borg-user-menu {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -45,7 +43,6 @@ a.logo {
 }
 .borg-greeting li.top {
   position: relative;
-  top: -10px;
 }
 .borg-greeting li.top a.greeting {
   font-weight: bold;
@@ -53,6 +50,9 @@ a.logo {
   padding: 0 5px 5px 23px;
   background: transparent url(../images/cog.png) 0 2px no-repeat;
   background-size: 14px;
+}
+.borg-greeting li.top a.greeting:hover {
+  text-decoration: underline;
 }
 .borg-greeting ul.menu-tree {
   padding: 0;
@@ -76,21 +76,47 @@ a.logo {
 .borg-greeting ul.menu-tree a:hover {
   background-color: #808080;
 }
-
 .borg-greeting a.icon {
   display: inline-block;
-  margin-left: 15px;
+  margin: 0 0 0 10px;
+  padding: 5px;
   color: rgba(255,255,255,.45);
-  position: relative;
-  top: 5px;
+}
+.borg-greeting a.icon:last-child {
+  padding-right: 0;
 }
 .borg-greeting a.icon:hover {
   color: #fff;
 }
 
 @media (min-width: 48em) {  /* 768px @ 16px font size  -- MD */
-  ul.borg-greeting ul.menu-tree {
-    display: block;
+  .borg-greeting a.icon {
+    display: none;
+  }
+}
+@media (min-width: 62em) { /* 992px @ 16px font size -- LG */
+  .borg-greeting a.icon {
+    display: inline-block;
+  }
+}
+
+/*******************************************************************************
+ * Main menu at mobile width
+ ******************************************************************************/
+@media all and (max-width: 48em) { /* 768px @ 16px font size  -- MD */
+  .block-system-main-menu ul.menu {
+    position: absolute;
+    right: 0;
+    top: 50px;
+    width: 250px;
+  }
+}
+@media all and (max-width: 34em) { /* 544px @ 16px font size -- SM */
+  .block-system-main-menu ul.menu {
+    position: absolute;
+    right: 0;
+    top: 50px;
+    width: 100vw;
   }
 }
 
@@ -119,6 +145,7 @@ ul.primary {
   padding: 0 0 0 .5em; /* LTR */
   white-space: nowrap;
   box-sizing: border-box;
+  overflow: hidden;
 }
 ul.primary li {
   display: inline;
@@ -201,57 +228,6 @@ ul.secondary a.active {
  ******************************************************************************/
 ul.inline li:first-child {
   padding-left: 0;
-}
-
-/*******************************************************************************
- * Main menu
- ******************************************************************************/
-.block-system-main-menu {
-  text-align: center;
-}
-.block-system-main-menu ul.menu-dropdown {
-  margin: 0 auto;
-}
-
-/* Main menu at mobile width */
-@media all and (max-width: 48em) {
-  .block-system-main-menu {
-    padding-top: 12px;
-    padding-bottom: 20px;
-  }
-  .block-system-main-menu .menu-toggle-button {
-    float: right;
-  }
-  .block-system-main-menu ul {
-    margin-top: 50px;
-  }
-  .block-system-main-menu a:hover {
-    text-decoration: underline;
-  }
-}
-
-/* Main menu at full width */
-@media all and (min-width: 48em) {
-  .block-system-main-menu {
-    /*float: left;*/
-  }
-  .block-system-main-menu ul {
-    list-style-type: none;
-    margin: 0;
-    padding-top: 5px;
-  }
-  .block-system-main-menu li {
-    display: inline-block;
-    margin-left: 20px;
-    padding-bottom: 4px;
-    border-bottom: 2px solid #000;
-  }
-  .block-system-main-menu li:hover {
-    border-bottom: 2px solid #aaa;
-  }
-  .block-system-main-menu li.active {
-    border-bottom: 2px solid #fff;
-  }
 }
 
 /*******************************************************************************
@@ -437,6 +413,12 @@ body.front .block-block-4 a.button {
   }
 }
 
+/*******************************************************************************
+ * Body links
+ ******************************************************************************/
+.field-name-body a {
+  text-decoration: underline;
+}
 
 /*******************************************************************************
  * All Nodes - Full view mode

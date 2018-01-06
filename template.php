@@ -303,21 +303,6 @@ function borg_preprocess_views_view_grid(&$variables) {
 }
 
 /**
- * Prepares variables for header templates.
- * @see header.tpl.php
- */
-function borg_preprocess_header(&$variables){
-  $variables['greeting'] = '';
-  global $user;
-  if ($user->uid) {
-    $variables['greeting'] = t('Hi !name!', array('!name'  => theme('username', array('account' => $user))));
-  }
-  $uri = backdrop_get_path('theme', 'borg') . '/images/logo.png';
-  $variables['logo'] = theme('image', array('uri' => $uri, 'alt' => t('Backdrop CMS Logo')));
-  $variables['site_name'] = t('backdrop');
-}
-
-/**
  * Prepares variables for book navigation templates.
  * @see book-navigation.tpl.php
  */
@@ -560,10 +545,15 @@ function borg_socialfield_drag_components($variables) {
 function borg_menu_tree__user_menu($variables) {
   $variables['attributes']['class'][] = 'closed';
 
+  global $user;
+  if ($user->uid) {
+    $greeting = t('Hi @name!', array('@name'  => $user->name));
+  }
+
   $output  = '<nav class="borg-greeting">';
-  $output .= '  <ul>';
+  $output .= '  <ul class="borg-user-menu">';
   $output .= '    <li class=top>';
-  $output .= '      <a href="#" id="greeting" class="greeting">' . t('Hi wesruv!') . '</a>';
+  $output .= '      <a href="#" id="greeting" class="greeting">' . $greeting . '</a>';
   $output .= '      <ul' . backdrop_attributes($variables['attributes']) . '>' . $variables['tree'] . '</ul>';
   $output .= '    </li>';
   $output .= '  </ul>';
