@@ -555,6 +555,28 @@ function borg_socialfield_drag_components($variables) {
 }
 
 /**
+ * Overrides theme_menu_tree().
+ */
+function borg_menu_tree__user_menu($variables) {
+  $variables['attributes']['class'][] = 'closed';
+
+  $output  = '<nav class="borg-greeting">';
+  $output .= '  <ul>';
+  $output .= '    <li class=top>';
+  $output .= '      <a href="#" id="greeting" class="greeting">' . t('Hi wesruv!') . '</a>';
+  $output .= '      <ul' . backdrop_attributes($variables['attributes']) . '>' . $variables['tree'] . '</ul>';
+  $output .= '    </li>';
+  $output .= '  </ul>';
+
+  $output .= '  <a class="icon" href="https://github.com/backdrop/backdrop"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a>';
+  $output .= '  <a class="icon" href="https://twitter.com/backdropcms"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a>';
+
+  $output .= '</nav>';
+
+  return $output;
+}
+
+/**
  * Overrides theme_menu_link().
  */
 function borg_menu_link(array $variables) {

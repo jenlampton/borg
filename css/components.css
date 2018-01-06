@@ -4,9 +4,6 @@
  * Contains specific styles for common HTML components.
  ******************************************************************************/
 
-.block-borg-blocks-branding {
-  float: left;
-}
 a.site-name {
   display: block;
   font-size: 2.125rem;/* 34px */
@@ -14,15 +11,87 @@ a.site-name {
   letter-spacing: -.04em;
   float: left;
 }
-.logo {
+a.logo {
   display: block;
   float: left;
   width: 40px;
   box-sizing: border-box;
   margin-left: 10px;
+  margin-right: 50px;
 }
+
+/*******************************************************************************
+ * Body links
+ ******************************************************************************/
 .field-name-body a {
   text-decoration: underline;
+}
+
+/*******************************************************************************
+ * Account Menu
+ ******************************************************************************/
+.borg-greeting {
+  text-align: right;
+}
+.borg-greeting ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+}
+.borg-greeting li {
+  margin: 0;
+  padding: 0;
+}
+.borg-greeting li.top {
+  position: relative;
+  top: -10px;
+}
+.borg-greeting li.top a.greeting {
+  font-weight: bold;
+  display: inline-block;
+  padding: 0 5px 5px 23px;
+  background: transparent url(../images/cog.png) 0 2px no-repeat;
+  background-size: 14px;
+}
+.borg-greeting ul.menu-tree {
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  right: 0;
+  z-index: 999;
+  background-color: #696969;
+}
+.borg-greeting ul.menu-tree.closed {
+  display: none;
+}
+.borg-greeting ul.menu-tree li {
+  list-style: none;
+}
+.borg-greeting ul.menu-tree a {
+  display: block;
+  padding: 3px 10px;
+  border-bottom: 1px solid #000;
+}
+.borg-greeting ul.menu-tree a:hover {
+  background-color: #808080;
+}
+
+.borg-greeting a.icon {
+  display: inline-block;
+  margin-left: 15px;
+  color: rgba(255,255,255,.45);
+  position: relative;
+  top: 5px;
+}
+.borg-greeting a.icon:hover {
+  color: #fff;
+}
+
+@media (min-width: 48em) {  /* 768px @ 16px font size  -- MD */
+  ul.borg-greeting ul.menu-tree {
+    display: block;
+  }
 }
 
 /*******************************************************************************
@@ -31,6 +100,10 @@ a.site-name {
 #admin-bar li {
   /* Undo the margin we add in base.css. */
   margin: 0;
+}
+#admin-bar .admin-bar-search input {
+  line-height: 16px;
+  height: auto;
 }
 
 /*******************************************************************************
@@ -133,47 +206,53 @@ ul.inline li:first-child {
 /*******************************************************************************
  * Main menu
  ******************************************************************************/
+.block-system-main-menu {
+  text-align: center;
+}
+.block-system-main-menu ul.menu-dropdown {
+  margin: 0 auto;
+}
 
- /* Main menu at mobile width */
- @media all and (max-width: 48em) {
-   .block-system-main-menu {
-     padding-top: 12px;
-     padding-bottom: 20px;
-   }
-   .block-system-main-menu .menu-toggle-button {
-     float: right;
-   }
-   .block-system-main-menu ul {
-     margin-top: 50px;
-   }
-   .block-system-main-menu a:hover {
-     text-decoration: underline;
-   }
- }
+/* Main menu at mobile width */
+@media all and (max-width: 48em) {
+  .block-system-main-menu {
+    padding-top: 12px;
+    padding-bottom: 20px;
+  }
+  .block-system-main-menu .menu-toggle-button {
+    float: right;
+  }
+  .block-system-main-menu ul {
+    margin-top: 50px;
+  }
+  .block-system-main-menu a:hover {
+    text-decoration: underline;
+  }
+}
 
- /* Main menu at full width */
- @media all and (min-width: 48em) {
-   .block-system-main-menu {
-     float: right;
-   }
-   .block-system-main-menu ul {
-     list-style-type: none;
-     margin: 0;
-     padding-top: 5px;
-   }
-   .block-system-main-menu li {
-     display: inline-block;
-     margin-left: 20px;
-     padding-bottom: 4px;
-     border-bottom: 2px solid #000;
-   }
-   .block-system-main-menu li:hover {
-     border-bottom: 2px solid #aaa;
-   }
-   .block-system-main-menu li.active {
-     border-bottom: 2px solid #fff;
-   }
- }
+/* Main menu at full width */
+@media all and (min-width: 48em) {
+  .block-system-main-menu {
+    /*float: left;*/
+  }
+  .block-system-main-menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding-top: 5px;
+  }
+  .block-system-main-menu li {
+    display: inline-block;
+    margin-left: 20px;
+    padding-bottom: 4px;
+    border-bottom: 2px solid #000;
+  }
+  .block-system-main-menu li:hover {
+    border-bottom: 2px solid #aaa;
+  }
+  .block-system-main-menu li.active {
+    border-bottom: 2px solid #fff;
+  }
+}
 
 /*******************************************************************************
  * Handbook menu

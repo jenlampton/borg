@@ -19,4 +19,4 @@ ckeditor_stylesheets[] = css/base.css
 ckeditor_stylesheets[] = css/ckeditor-iframe.css
 
 ; Custom javascript to be added:
-;scripts[] = js/borg.js
+scripts[] = js/borg.js
