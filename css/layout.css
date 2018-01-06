@@ -69,8 +69,17 @@ main {
 /*******************************************************************************
  * Sidebar
  ******************************************************************************/
-.l-sidebar-first .block:first-child h2 {
-  margin-top: 0;
+.l-sidebar {
+  margin-top: 30px;
+  border-top: 2px solid #E8E6E5;
+  padding-top: 15px;
+}
+@media (min-width: 48em) {  /* 768px @ 16px font size  -- MD */
+  .l-sidebar {
+    margin-top: 0;
+    border-top: 0;
+    padding-top: 0;
+  }
 }
 
 /*******************************************************************************
@@ -96,6 +105,7 @@ main {
 .l-footer a:hover {
   color: #007CBA;
 }
+
 
 /*******************************************************************************
  * XL containers get more breathing room.

@@ -80,7 +80,8 @@ function borg_form_user_profile_form_alter(&$form, &$form_state) {
  ******************************************************************************/
 
 /**
- * Prepares variables for page.tpl.php
+ * Prepares variables for page templates.
+ * @see page.tpl.php
  */
 function borg_preprocess_page(&$variables) {
   // Add the Source Sans Pro font.
@@ -148,6 +149,7 @@ $(window).load(function() {
 
 /**
  * Prepares variables for layout templates.
+ * @see layout.tpl.php
  */
 function borg_preprocess_layout(&$variables) {
   $variables['wrap_attributes'] = array('class' => array('l-wrapper'));
@@ -170,7 +172,8 @@ function borg_preprocess_layout(&$variables) {
 }
 
 /**
- * Preprocess views exposed forms
+ * Preprocess views exposed form templates.
+ * @see views-exposed-form.tpl.php
  */
 function borg_preprocess_views_exposed_form(&$variables) {
   if (substr($variables['form']['#id'], 0, 26) == 'views-exposed-form-modules'){
@@ -203,7 +206,8 @@ function borg_preprocess_views_exposed_form(&$variables) {
 }
 
 /**
- * Prepare variables for node template
+ * Prepare variables for node templates.
+ * @see node.tpl.php
  */
 function borg_preprocess_node(&$variables){
   // Change the submitted by language for all nodes.
@@ -224,7 +228,7 @@ function borg_preprocess_node(&$variables){
     // Get the profile photo.
     $author = user_load($variables['uid']);
     $langcode = $author->langcode;
-    $variables['user_picture'] = theme('image_style', array('style_name' => 'medium', 'uri' => $author->field_photo[$langcode][0]['uri']));
+    $variables['user_picture'] = theme('image_style', array('style_name' => 'headshot_small', 'uri' => $author->field_photo[$langcode][0]['uri']));
   }
 
   // For project nodes...
@@ -237,7 +241,24 @@ function borg_preprocess_node(&$variables){
 }
 
 /**
- * Prepares variables for views-view-grid.tpl.php
+ * Prepare variables for comment templates.
+ * @see comment.tpl.php
+ */
+function borg_preprocess_comment(&$variables){
+  // Change text to "Comment from".
+  $variables['submitted'] = str_replace('Submitted by', 'Comment from', $variables['submitted']);
+  // Get the headshot photo from the field.
+  $author = user_load($variables['comment']->uid);
+  if (!empty($author->field_photo)) {
+    $langcode = $author->langcode;
+    $uri = $author->field_photo[$langcode][0]['uri'];
+    $variables['user_picture'] = theme('image_style', array('style_name' => 'headshot_small', 'uri' => $uri));
+  }
+}
+
+/**
+ * Prepares variables for views grid templates.
+ * @see views-view-grid.tpl.php
  */
 function borg_preprocess_views_view_grid(&$variables) {
   $view     = $variables['view'];
@@ -282,7 +303,8 @@ function borg_preprocess_views_view_grid(&$variables) {
 }
 
 /**
- * Prepare variables for node template
+ * Prepares variables for header templates.
+ * @see header.tpl.php
  */
 function borg_preprocess_header(&$variables){
   $variables['greeting'] = '';
@@ -296,12 +318,7 @@ function borg_preprocess_header(&$variables){
 }
 
 /**
- * Processes variables for book-navigation.tpl.php.
- *
- * @param $variables
- *   An associative array containing the following key:
- *   - book_link
- *
+ * Prepares variables for book navigation templates.
  * @see book-navigation.tpl.php
  */
 function borg_preprocess_book_navigation(&$variables) {
@@ -340,14 +357,12 @@ function borg_preprocess_book_navigation(&$variables) {
   }
 }
 
+/******************************************************************************
+ * Theme function overrides
+ ******************************************************************************/
+
 /**
- * Gets the previous Book link - ignoring child pages.
- *
- * @param  $book_link
- *   A fully loaded menu link that is part of the book hierarchy.
- *
- * @return
- *   A fully loaded menu link for the page before the one represented in $book_link.
+ * Overrides theme_book_prev().
  */
 function borg_book_prev($book_link) {
   // If the parent is zero, we are at the start of a book.
@@ -373,13 +388,7 @@ function borg_book_prev($book_link) {
 }
 
 /**
- * Gets the next Book link - ignoring child pages.
- *
- * @param  $book_link
- *   A fully loaded menu link that is part of the book hierarchy.
- *
- * @return
- *   A fully loaded menu link for the page after the one represented in $book_link.
+ * Overrides theme_book_next().
  */
 function borg_book_next($book_link) {
   $flat = book_get_flat_menu($book_link);
@@ -401,10 +410,9 @@ function borg_book_next($book_link) {
   }
 }
 
-/*******************************************************************************
- * Theme function overrides.
- ******************************************************************************/
-
+/**
+ * Overrides theme_form_element().
+ */
 function borg_form_element($variables) {
   $element = &$variables['element'];
 
@@ -494,7 +502,7 @@ function borg_form_element($variables) {
 }
 
 /**
- * Custom theme output for widget.
+ * Overrides theme_socialfield_drag_components().
  */
 function borg_socialfield_drag_components($variables) {
   $element = $variables['element'];
@@ -581,6 +589,9 @@ function borg_feed_icon($variables) {
   return l($image, $variables['url'], array('html' => TRUE, 'attributes' => array('class' => array('feed-icon'), 'title' => $text)));
 }
 
+/**
+ * Overrides theme_menu_local_tasks().
+ */
 function borg_menu_local_tasks($variables) {
   $output = '';
 
