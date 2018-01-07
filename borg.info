@@ -18,7 +18,7 @@ stylesheets[screen][] = css/menu-toggle.theme.css
 
 ; Stylesheets to be added in the rich-text editor:
 ckeditor_stylesheets[] = css/base.css
-ckeditor_stylesheets[] = css/ckeditor-iframe.css
+ckeditor_stylesheets[] = css/editor.css
 
 ; Custom javascript to be added:
 scripts[] = js/borg.js
