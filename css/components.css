@@ -198,20 +198,20 @@ div.full-width {
 /*******************************************************************************
  * All Nodes - Full view mode
  ******************************************************************************/
-article {
-  text-align: center;
+article h2 {
+  max-width: 700px;
 }
 article footer,
 article .content {
-  text-align: left;
   max-width: 700px;
+  text-align: left;
 }
-article .content {
+article.view-mode-full .content {
   padding-bottom: 15px; /* for proper tags placement */
 }
 
 @media (min-width: 34em) { /* 544px @ 16px font size -- SM */
-  article .content {
+  article.view-mode-full .content {
     padding-bottom: 30px; /* for proper tags placement */
   }
 }
@@ -237,8 +237,9 @@ article ul.links.inline {
   list-style: none;
   display: block;
   margin: 0;
-  padding: 10px 0;
+  padding: 15px 0;
   max-width: 700px;
+  text-align: right;
 }
 article ul.links.inline li {
   padding: 5px 15px;
@@ -256,7 +257,7 @@ article ul.links.inline li:last-child {
 }
 
 @media (min-width: 34em) { /* 544px @ 16px font size -- SM */
-  article ul.links.inline {
+  article.view-mode-full ul.links.inline {
     padding-top:  35px;
   }
   article ul.links.inline li {
@@ -281,7 +282,6 @@ article footer {
   border: 1px solid #E8E6E5;
   border-radius: 10px;
   padding: 15px;
-  margin-bottom: 35px;
   display: table;
   width: 100%;
   box-sizing: border-box;
@@ -337,7 +337,7 @@ article footer .arrow-down:after {
 
 @media (min-width: 34em) { /* 544px @ 16px font size -- SM */
   article footer {
-    margin-bottom: 55px;
+    margin-bottom: 25px;
   }
   article footer img {
     max-width: 100px;
@@ -353,6 +353,11 @@ article footer .arrow-down:after {
   article footer .arrow-down {
     display: block;
     left: 45px;
+  }
+}
+@media (min-width: 48em) {  /* 768px @ 16px font size  -- MD */
+  article.view-mode-full footer {
+    margin-bottom: 50px;
   }
 }
 
@@ -395,13 +400,15 @@ article.node-post.view-mode-teaser {
 article.node-post.view-mode-teaser h2 {
   margin: 0 0 15px 0;
 }
-article.node-post.view-mode-teaser ul.links.inline {
-  margin-bottom: 1em;
-}
 
-@media (min-width: 34em) {
+@media (min-width: 34em) { /* 544px @ 16px font size -- SM */
   article.node-post.view-mode-teaser {
     padding: 15px 0 20px 0;
+  }
+}
+@media (min-width: 48em) {  /* 768px @ 16px font size  -- MD */
+  article.node-post.view-mode-teaser {
+    margin-bottom: 75px;
   }
 }
 
@@ -423,7 +430,7 @@ article.node-post.view-mode-full .content {
   margin-bottom: 30px;
   position: relative;
 }
-article.node-post .field-name-body {
+article.node-post.view-mode-full .field-name-body {
   padding-bottom: 30px;
 }
 
@@ -439,11 +446,11 @@ article .content .field-name-field-tags {
   margin: 0;
   padding: 0;
   position: absolute;
-  right: 0;
   bottom: -15px;
   width: 100%;
   height: 30px;
   overflow: hidden;
+  max-width: 700px;
 }
 .field-name-field-tags .field-item {
   display: inline-block;
@@ -465,6 +472,9 @@ article .content .field-name-field-tags {
   -moz-border-radius-topright: 4px;
   -webkit-border-top-right-radius: 4px;
   border-top-right-radius: 4px;
+}
+.field-name-field-tags .field-item:last-child a {
+  margin-right: 0;
 }
 .field-name-field-tags a:before {
   content: "";
