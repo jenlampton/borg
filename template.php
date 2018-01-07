@@ -127,7 +127,8 @@ function borg_preprocess_page(&$variables) {
       $variables['classes'][] = 'user-password';
     }
     elseif (is_numeric(arg(1)) && ! arg(2)) {
-      $variables['classes'][] = 'account-page';
+      $variables['classes'][] = 'profile-page';
+      backdrop_add_css($path . '/css/page-profile.css');
     }
     else {
       global $user;
