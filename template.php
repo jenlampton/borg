@@ -104,7 +104,7 @@ $(window).load(function() {
   $path = backdrop_get_path('theme', 'borg');
   if (arg(0) == 'modules' || arg(0) == 'themes' || arg(0) == 'layouts') {
     $variables['classes'][] = 'project-search';
-    backdrop_add_css($path . '/css/project-search.css');
+    backdrop_add_css($path . '/css/page-project-search.css');
   }
   elseif (arg(0) == 'showcase') {
     $variables['classes'][] = 'showcase';
