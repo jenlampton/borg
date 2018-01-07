@@ -236,7 +236,7 @@ function borg_preprocess_node(&$variables){
     $path = backdrop_get_path('theme', 'borg');
     unset($variables['content']['project_release_downloads']['#prefix']);
     $variables['classes'][] = 'node-project';
-    backdrop_add_css($path . '/css/project-styles.css');
+    backdrop_add_css($path . '/css/node-project.css');
   }
 }
 
