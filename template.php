@@ -89,22 +89,15 @@ function borg_preprocess_page(&$variables) {
   // Add FontAwesome.
   backdrop_add_js('https://use.fontawesome.com/baf3c35582.js', array('type' => 'external'));
 
-  // Add Flexslider to the front page only.
-  if (backdrop_is_front_page()) {
-    $path = backdrop_get_path('theme', 'borg');
-    backdrop_add_css($path . '/css/flexslider.css');
-    backdrop_add_js($path . '/js/jquery.flexslider.js');
-    $script = "
-$(window).load(function() {
-  $('.flexslider').flexslider();
-});";
-    backdrop_add_js($script, array('type' => 'inline'));
+  if (module_exists('admin_bar') && user_access('admin_bar')) {
+    $variables['classes'][] = 'admin-bar';
   }
 
   $path = backdrop_get_path('theme', 'borg');
-  if (arg(0) == 'modules' || arg(0) == 'themes' || arg(0) == 'layouts') {
-    $variables['classes'][] = 'project-search';
-    backdrop_add_css($path . '/css/page-project-search.css');
+
+  // Add Flexslider to the front page only.
+  if (backdrop_is_front_page()) {
+    backdrop_add_css($path . '/css/page-front.css');
   }
   elseif (arg(0) == 'showcase') {
     $variables['classes'][] = 'showcase';
@@ -116,12 +109,11 @@ $(window).load(function() {
       backdrop_add_css($path . '/css/page-services.css');
     }
   }
-
-  if (module_exists('admin_bar') && user_access('admin_bar')) {
-    $variables['classes'][] = 'admin-bar';
+  elseif (arg(0) == 'modules' || arg(0) == 'themes' || arg(0) == 'layouts') {
+    $variables['classes'][] = 'project-search';
+    backdrop_add_css($path . '/css/page-project-search.css');
   }
-
-  if (arg(0) == 'user') {
+  elseif (arg(0) == 'user') {
     if (arg(1) == 'login') {
       $variables['classes'][] = 'user-form';
       $variables['classes'][] = 'user-login';
