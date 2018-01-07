@@ -25,102 +25,6 @@ a.logo {
 }
 
 /*******************************************************************************
- * Account Menu
- ******************************************************************************/
-.borg-greeting {
-  text-align: right;
-  padding-right: 15px;
-}
-.borg-greeting ul.borg-user-menu {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  font-size: 14px;
-}
-.borg-greeting li {
-  margin: 0;
-  padding: 0;
-}
-.borg-greeting li.top {
-  position: relative;
-}
-.borg-greeting li.top a.greeting {
-  font-weight: bold;
-  display: inline-block;
-  padding: 0 5px 5px 23px;
-  background: transparent url(../images/cog.png) 0 2px no-repeat;
-  background-size: 14px;
-}
-.borg-greeting li.top a.greeting:hover {
-  text-decoration: underline;
-}
-.borg-greeting ul.menu-tree {
-  padding: 0;
-  margin: 0;
-  position: absolute;
-  right: 0;
-  z-index: 999;
-  background-color: #696969;
-}
-.borg-greeting ul.menu-tree.closed {
-  display: none;
-}
-.borg-greeting ul.menu-tree li {
-  list-style: none;
-}
-.borg-greeting ul.menu-tree a {
-  display: block;
-  padding: 3px 10px;
-  border-bottom: 1px solid #000;
-}
-.borg-greeting ul.menu-tree a:hover {
-  background-color: #808080;
-}
-.borg-greeting a.icon {
-  display: inline-block;
-  margin: 0 0 0 10px;
-  padding: 5px;
-  color: rgba(255,255,255,.45);
-}
-.borg-greeting a.icon:last-child {
-  padding-right: 0;
-}
-.borg-greeting a.icon:hover {
-  color: #fff;
-}
-
-@media (min-width: 48em) {  /* 768px @ 16px font size  -- MD */
-  .borg-greeting a.icon {
-    display: none;
-  }
-}
-@media (min-width: 62em) { /* 992px @ 16px font size -- LG */
-  .borg-greeting a.icon {
-    display: inline-block;
-  }
-}
-
-/*******************************************************************************
- * Main menu at mobile width
- ******************************************************************************/
-@media all and (max-width: 48em) { /* 768px @ 16px font size  -- MD */
-  .block-system-main-menu ul.menu {
-    position: absolute;
-    right: 0;
-    top: 50px;
-    width: 250px;
-  }
-}
-@media all and (max-width: 34em) { /* 544px @ 16px font size -- SM */
-  .block-system-main-menu ul.menu {
-    position: absolute;
-    right: 0;
-    top: 50px;
-    width: 100vw;
-  }
-}
-
-/*******************************************************************************
  * Admin-bar
  ******************************************************************************/
 #admin-bar li {
@@ -231,48 +135,6 @@ ul.inline li:first-child {
 }
 
 /*******************************************************************************
- * Handbook menu
- ******************************************************************************/
-.block-borg-blocks-handbook ul.menu {
-    background-color: #F7F7F7;
-    border: 1px solid #444b53;
-    padding: 20px;
-}
-
-.block-borg-blocks-handbook ul.menu li {
-    list-style: none;
-    padding: 0px;
-}
-
-.block-borg-blocks-handbook ul.menu li.expanded {
-  border-top: solid 1px #444b53;
-  margin-top: 20px;
-  padding-top: 15px;
-}
-
-.block-borg-blocks-handbook ul.menu li.first.expanded {
-  border-top: 0;
-  margin-top: 0px;
-  padding-top: 0px;
-}
-
-.block-borg-blocks-handbook ul.menu li.expanded span {
-  padding: 30px 0 10px 0;
-}
-.block-borg-blocks-handbook ul.menu li.expanded span.nolink {
-  font-size: 1.5rem; /* 24px */
-  letter-spacing: -.05em;
-}
-
-.block-borg-blocks-handbook ul.menu li.first.expanded span {
-  padding: 0px 0 10px 0;
-}
-.block-borg-blocks-handbook ul.menu ul {
-  margin: 0;
-  padding: 0;
-}
-
-/*******************************************************************************
  * Search block
  ******************************************************************************/
 .search-block-form {
@@ -297,7 +159,7 @@ ul.inline li:first-child {
 }
 
 /*******************************************************************************
- * Book Navigation
+ * Book Navigation block
  ******************************************************************************/
 .book-navigation {
   margin-top: 50px;
@@ -360,9 +222,8 @@ body.front .l-footer {
 }
 
 /*******************************************************************************
- * Front page
+ * Full Width elements
  ******************************************************************************/
-
 div.full-width {
   margin-left: calc(50% - 50vw);
   width: 100vw;
@@ -990,29 +851,6 @@ a.feed-icon {
 }
 
 /*******************************************************************************
- * Footer Menu
- ******************************************************************************/
-.l-footer .block-menu,
-.l-footer .block-menu-menu-footer-menu {
-  position: absolute;
-  bottom: -62px;
-  right: 0;
-  width: 50%;
-}
-.l-footer .block-menu ul,
-.l-footer .block-menu-menu-footer-menu ul {
-  margin: 0;
-  padding: 0;
-}
-.l-footer .block-menu li,
-.l-footer .block-menu-menu-footer-menu li {
-  display: inline-block;
-  list-style-type: none;
-  margin: 0;
-  padding: .5em 1em;
-}
-
-/*******************************************************************************
  * Powered by Backdrop block.
  ******************************************************************************/
 .block-system-powered-by {
@@ -1505,13 +1343,11 @@ a.tabledrag-handle .handle {
 /*******************************************************************************
  * Default pager styles
  ******************************************************************************/
-
 .item-list .pager {
   display: inline-block;
   margin: 20px 0 0;
   padding: 0;
 }
-
 .item-list .pager li {
   position: relative;
   display: block;
@@ -1524,7 +1360,6 @@ a.tabledrag-handle .handle {
   font-weight: normal;
   font-size: 1.25rem; /* 20px */
 }
-
 .item-list .pager li a {
   display: block;
   min-width: 2em;
@@ -2355,14 +2190,13 @@ a.button-small {
   content: '(';
   padding: 0 0.1em 0 0;
 }
-
 .download-size span:after {
   content: ')';
   padding: 0 0 0 0.1em;
 }
 
 /*******************************************************************************
- * Form buttons
+ * Form submit buttons
  ******************************************************************************/
 .form-actions {
   text-align: right;
@@ -2386,7 +2220,7 @@ a.button-small {
 }
 
 /*******************************************************************************
- * Backdrop mark drawn with CSS
+ * Backdrop mark - drawn with CSS
  * Is fluid, defaults to 100% width, but can be changed and the graphic will scale
  * Text can be added inside element for screenreaders (e.g. Backdrop)
  ******************************************************************************/

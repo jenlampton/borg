@@ -10,6 +10,7 @@ stylesheets[all][] = css/system.theme.css
 stylesheets[screen][] = css/base.css
 stylesheets[screen][] = css/layout.css
 stylesheets[screen][] = css/components.css
+stylesheets[screen][] = css/components-menus.css
 stylesheets[screen][] = css/components-views.css
 stylesheets[screen][] = css/ckeditor-iframe.css
 stylesheets[screen][] = css/menu-dropdown.theme.css
