@@ -224,12 +224,18 @@ function borg_preprocess_node(&$variables){
     $variables['user_picture'] = theme('image_style', array('style_name' => 'headshot_small', 'uri' => $author->field_photo[$langcode][0]['uri']));
   }
 
-  // For project nodes...
+  $path = backdrop_get_path('theme', 'borg');
+
+  // For project nodes include a special stylesheet.
   if (($variables['type'] == 'core') || substr($variables['type'], 0, 8) == 'project_'){
-    $path = backdrop_get_path('theme', 'borg');
     unset($variables['content']['project_release_downloads']['#prefix']);
     $variables['classes'][] = 'node-project';
     backdrop_add_css($path . '/css/node-project.css');
+  }
+
+  // For showcase nodes include a special stylesheet.
+  if ($variables['type'] == 'showcase') {
+    backdrop_add_css($path . '/css/node-showcase.css');
   }
 }
 
