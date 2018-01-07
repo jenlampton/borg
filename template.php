@@ -113,7 +113,7 @@ $(window).load(function() {
     $variables['classes'][] = 'support';
     if (arg(1) == 'services') {
       $variables['classes'][] = 'services';
-      backdrop_add_css($path . '/css/services.css');
+      backdrop_add_css($path . '/css/page-services.css');
     }
   }
 
