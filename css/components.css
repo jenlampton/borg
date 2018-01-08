@@ -250,22 +250,22 @@ article ul.links.inline {
   clear: both;
 }
 article ul.links.inline li {
+  display: inline-block;
   padding: 0;
+  margin: 4px 8px 4px 0;
+}
+article ul.links.inline li:last-child {
+  margin-right: 0;
 }
 article ul.links.inline li a {
   padding: 5px 15px;
   border-radius: 15px;
   display: inline-block;
   white-space: nowrap;
-  margin: 4px 8px 4px 0;
   border: 1px solid #d7d7d7;
   -webkit-box-shadow: 0 10px 10px -10px #E8E6E5;
       -moz-box-shadow: 0 10px 10px -10px #E8E6E5;
            box-shadow: 0 10px 10px -10px #E8E6E5;
-}
-article ul.links.inline li:last-child,
-article ul.links.inline li:last-child a {
-  margin-right: 0;
 }
 article ul.links.inline li a:hover {
   background-color: #f7f7f7;
@@ -783,10 +783,7 @@ body.user-form .page-title {
  * Input format selection
  ******************************************************************************/
 .filter-wrapper {
-  padding: 0.5em;
-}
-.filter-wrapper label {
-  display: block;
+  padding: 3em 0 1.5em;
 }
 
 /*******************************************************************************
@@ -1005,13 +1002,6 @@ a.tabledrag-handle .handle {
 }
 .pager-last a:after {
    left: 1px;
-}
-
-/*******************************************************************************
- * RSS feed icon.
- ******************************************************************************/
-.block-borg-blocks-rss {
-  text-align: center;
 }
 
 /*******************************************************************************
