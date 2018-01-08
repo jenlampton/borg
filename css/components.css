@@ -268,7 +268,7 @@ article ul.links.inline li:last-child a {
   margin-right: 0;
 }
 article ul.links.inline li a:hover {
-  background-color: #E8E6E5;
+  background-color: #f7f7f7;
 }
 
 @media (min-width: 34em) { /* 544px @ 16px font size -- SM */
@@ -472,6 +472,13 @@ article .content .field-name-field-tags {
   -moz-box-shadow: -1px -1px 2px #004977;
   -webkit-box-shadow: -1px -1px 2px #004977;
   box-shadow: -1px -1px 2px #004977;
+}
+.field-name-field-tags a:hover {
+  background-color: #007CBA;
+  color: #fff;
+}
+.field-name-field-tags a:hover:before {
+  border-color: transparent #007CBA transparent transparent;
 }
 
 /*******************************************************************************
