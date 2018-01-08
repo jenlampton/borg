@@ -128,13 +128,6 @@ ul.secondary a.active {
 }
 
 /*******************************************************************************
- * Inline links
- ******************************************************************************/
-ul.inline li:first-child {
-  padding-left: 0;
-}
-
-/*******************************************************************************
  * Search block
  ******************************************************************************/
 .search-block-form {
@@ -227,13 +220,6 @@ main.col-md-8 .block-block-books figure {
 }
 
 /*******************************************************************************
- * Body links should be underlined
- ******************************************************************************/
-.field-name-body a {
-  text-decoration: underline;
-}
-
-/*******************************************************************************
  * All Nodes - Full view mode
  ******************************************************************************/
 article h2 {
@@ -262,14 +248,17 @@ article.view-mode-teaser footer p {
 }
 
 /*******************************************************************************
- * All fields
+ * Fields
  ******************************************************************************/
 article .content .field {
   padding: 5px 0;
 }
+article .field-name-body a {
+  text-decoration: underline;
+}
 
 /*******************************************************************************
- * All entity inline links
+ * All inline links
  ******************************************************************************/
 article ul.links.inline {
   list-style: none;
@@ -290,6 +279,9 @@ article ul.links.inline li {
       -moz-box-shadow: 0 10px 10px -10px #E8E6E5;
            box-shadow: 0 10px 10px -10px #E8E6E5;
 }
+article ul.links.inline li:first-child {
+  padding-left: 0;
+}
 article ul.links.inline li:last-child {
   margin-right: 0;
 }
@@ -307,7 +299,6 @@ article ul.links.inline li:last-child {
  * Comment inline links
  ******************************************************************************/
 article.comment ul.links.inline {
-  text-align: right;
   padding: 10px;
 }
 
