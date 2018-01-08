@@ -1,8 +1,8 @@
 /*******************************************************************************
  * layout.scss
  *
- * Contains styles relating to layout. Any adjustment of margins/padding/widths,
- * etc. should be in the layouts/double_fixed/double-fixed.css file!
+ * Contains styles relating to layouts. All element classes used as base
+ * identifiers in this file should start with .l-
  ******************************************************************************/
 
 /*******************************************************************************
