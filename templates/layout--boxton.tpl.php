@@ -68,8 +68,10 @@
 
   <?php if (!empty($content['bottom'])): ?>
     <div class="l-bottom">
-      <div class="l-bottom-inner">
-        <?php print $content['bottom']; ?>
+      <div class="l-bottom-inner container container-fluid">
+        <div class="row">
+          <?php print $content['bottom']; ?>
+        </div>
       </div>
     </div>
   <?php endif; ?>
