@@ -773,25 +773,22 @@ body.user-form .page-title {
  * Registration form
  ******************************************************************************/
 #user-register-form {
-  max-width: 600px;
+  max-width: 640px;
   margin: 0 auto;
 }
 #user-register-form .form-item {
   padding: 15px 0;
-  display: flex;
 }
 #user-register-form fieldset .form-item {
   padding: 5px 0;
   margin-bottom: .5em;
 }
 #user-register-form .form-item label {
-  width: 180px;
   padding-right: 15px;
-  display: inline-block;
 }
-#user-register-form .form-item input {
+#user-register-form .form-item input[type="text"],
+#user-register-form .form-item input[type="email"] {
   width: 100%;
-  flex: 1;
 }
 #user-register-form .form-item div.description {
   display: none;
