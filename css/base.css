@@ -148,6 +148,14 @@ pre {
 code {
   font-family: Menlo, Consolas, "Andale Mono", "Lucida Console", "Nimbus Mono L", "DejaVu Sans Mono", monospace, "Courier New";
   font-size: 0.857em;
+  background-color: #F7F7F7;
+  padding: 0.2em 0.5em;
+  border-radius: 3px;
+}
+pre code {
+  display: block;
+  padding: 0;
+  line-height: 1.5em;
 }
 
 dt,
