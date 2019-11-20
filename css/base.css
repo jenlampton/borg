@@ -262,3 +262,9 @@ input[type="submit"]:hover {
 .form-type-checkbox .description {
   margin-left: 1.6em;
 }
+span.monospace {
+  font-family: Courier,Lucida Sans Typewriter,Lucida Typewriter,monospace;
+  font-size: 85%;
+  padding-right: 1px;
+}
+
