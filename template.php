@@ -237,9 +237,11 @@ function borg_preprocess_node(&$variables){
     // Get the profile photo if the field exists.
     $variables['user_picture'] = '';
     if (property_exists($author, 'field_photo')) {
-      $uri = $author->field_photo[$lang][0]['uri'];
-      $variables['user_picture'] = theme('image_style', array(
-        'style_name' => 'headshot_small', 'uri' => $uri));
+      if (!empty($author->field_photo)) {
+        $uri = $author->field_photo[$lang][0]['uri'];
+        $variables['user_picture'] = theme('image_style', array(
+          'style_name' => 'headshot_small', 'uri' => $uri));
+      }
     }
   }
 
