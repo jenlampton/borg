@@ -233,10 +233,14 @@ function borg_preprocess_node(&$variables){
     if (!empty($author->field_name[$lang])) {
       $variables['name'] = l($author->field_name[$lang][0]['safe_value'], 'user/' . $author->uid);
     }
-    // Get the profile photo.
-    $uri = $author->field_photo[$lang][0]['uri'];
-    $variables['user_picture'] = theme('image_style', array(
-      'style_name' => 'headshot_small', 'uri' => $uri));
+
+    // Get the profile photo if the field exists.
+    $variables['user_picture'] = '';
+    if (property_exists($author, 'field_photo')) {
+      $uri = $author->field_photo[$lang][0]['uri'];
+      $variables['user_picture'] = theme('image_style', array(
+        'style_name' => 'headshot_small', 'uri' => $uri));
+    }
   }
 
   // Change the submitted by language for all nodes.
