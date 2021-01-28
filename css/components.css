@@ -395,13 +395,6 @@ article footer .arrow-down:after {
     max-width: 100px;
     max-height: 100px;
   }
-  article footer .submitted {
-    padding: 0;
-    line-height: 40px;
-  }
-  article footer.has-picture .submitted {
-    line-height: 100px;
-  }
   article footer .arrow-down {
     display: block;
     left: 45px;
