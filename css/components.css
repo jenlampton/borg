@@ -850,7 +850,11 @@ body.user-form .page-title {
     text-align: left;
   }
   #user-login .form-item {
+    padding: 20px 0;
     display: flex;
+  }
+  #user-login .password-toggle {
+    top: -1.5em;
   }
   #user-login .form-item label {
     text-align: right;
