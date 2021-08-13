@@ -843,7 +843,7 @@ body.user-form .page-title {
   padding-top: 10px;
 }
 
-@media (min-width: 34em) { /* 544px */
+@media (min-width: 48em) {  /* 768px @ 16px font size  -- MD */
   #user-login {
     max-width: 600px;
     margin: 0 auto 10em auto;
@@ -900,33 +900,23 @@ body.user-form .page-title {
 #user-register-form .help p {
   font-size: 1.5rem; /* 24px */
 }
-#user-register-form .form-item {
-  padding: 15px 0;
-  display: flex;
-}
-#user-register-form .field-type-text-long .form-item,
-#user-register-form .form-type-checkbox .form-item {
-  /* undo flex */
-  display: block;
-  padding-bottom: 0;
-}
 #user-register-form fieldset .form-item {
   padding: 5px 0;
   margin-bottom: .5em;
 }
 #user-register-form .form-item label {
-  width: 180px;
   padding-right: 15px;
-  display: inline-block;
+  line-height: 2.2em;
 }
-#user-register-form .field-type-text-long label,
-#user-register-form .form-type-checkbox label {
+#user-register-form .field-type-text-long label {
   width: auto;
+}
+#user-register-form .form-type-checkbox label {
+  line-height: 1.25em;
 }
 #user-register-form .form-item input[type="text"],
 #user-register-form .form-item input[type="email"] {
   width: 100%;
-  flex: 1;
 }
 #user-register-form #edit-contact {
   margin: 30px 0;
@@ -958,14 +948,30 @@ body.user-form .page-title {
   color: #666;
 }
 
-@media (max-width: 580px) {
+@media (min-width: 48em) {  /* 768px @ 16px font size  -- MD */
   #user-register-form .form-item {
-    display: block;
+    display: flex;
     padding: 10px 0;
     margin: 0;
   }
-  #user-register-form .form-item label {
+  #user-register-form .field-type-text-long .form-item,
+  #user-register-form .form-type-checkbox .form-item {
+    /* undo flex */
     display: block;
+    padding-bottom: 0;
+  }
+  #user-register-form .form-item label {
+    width: 130px;
+  }
+  #user-register-form .form-type-checkbox label {
+    width: auto;
+  }
+  #user-register-form .form-item input[type="text"],
+  #user-register-form .form-item input[type="email"] {
+    flex: 1;
+  }
+  #user-register-form #edit-contact .form-item input {
+    flex: none;
   }
 }
 
