@@ -625,6 +625,9 @@ a.feed-icon {
 .block-on-the-web-social-links a i {
   color: #007CBA;
 }
+.l-footer .block-on-the-web-social-links a i {
+  text-align: left;
+}
 .block-on-the-web-social-links a i:first-child {
   margin-left: 0;
 }
