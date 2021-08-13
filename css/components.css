@@ -819,6 +819,7 @@ body.user-form .page-title {
 *******************************************************************************/
 #user-login .help p {
   font-size: 1.5rem; /* 24px */
+  text-align: center;
 }
 #user-login .form-item {
   padding: 15px 0;
@@ -833,9 +834,6 @@ body.user-form .page-title {
 #user-login .form-required {
   display: none;
 }
-#user-login .form-item input {
-  width: 100%;
-}
 #user-login small {
   margin: 0 10px;
   display: block;
@@ -844,7 +842,7 @@ body.user-form .page-title {
 
 @media (min-width: 34em) { /* 544px */
   #user-login {
-    max-width: 560px;
+    max-width: 600px;
     margin: 0 auto 10em auto;
     text-align: left;
   }
@@ -862,6 +860,7 @@ body.user-form .page-title {
   }
   #user-login .form-item input {
     width: 390px;
+    flex: 1;
   }
   #user-login small {
     display: inline;
