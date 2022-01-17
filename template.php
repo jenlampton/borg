@@ -484,14 +484,14 @@ function borg_preprocess_book_navigation(&$variables) {
 
   if ($book_link['mlid']) {
     // Change the previous link.
-    if ($prev = borg_book_prev($book_link)) {
-      $prev_href = url($prev['href']);
-      backdrop_add_html_head_link(array('rel' => 'prev', 'href' => $prev_href));
-      $variables['prev_url'] = $prev_href;
-      $variables['prev_title'] = check_plain($prev['title']);
+    if ($previous = _borg_book_prev($book_link)) {
+      $previous_href = url($previous['href']);
+      backdrop_add_html_head_link(array('rel' => 'prev', 'href' => $previous_href));
+      $variables['prev_url'] = $previous_href;
+      $variables['prev_title'] = check_plain($previous['title']);
     }
     // Change the next link.
-    if ($next = borg_book_next($book_link)) {
+    if ($next = _borg_book_next($book_link)) {
       $next_href = url($next['href']);
       backdrop_add_html_head_link(array('rel' => 'next', 'href' => $next_href));
       $variables['next_url'] = $next_href;
@@ -520,13 +520,14 @@ function borg_preprocess_book_navigation(&$variables) {
  ******************************************************************************/
 
 /**
- * Overrides theme_book_prev().
+ * Replaces book_prev().
  */
-function borg_book_prev($book_link) {
+function _borg_book_prev($book_link) {
   // If the parent is zero, we are at the start of a book.
   if ($book_link['plid'] == 0) {
     return NULL;
   }
+
   $flat = book_get_flat_menu($book_link);
   // Remove child pages from next/prev links.
   foreach ($flat as $key => $item) {
@@ -535,20 +536,20 @@ function borg_book_prev($book_link) {
     }
   }
 
-  // Assigning the array to $flat resets the array pointer for use with each().
-  $curr = NULL;
-  do {
-    $prev = $curr;
-    list($key, $curr) = each($flat);
-  } while ($key && $key != $book_link['mlid']);
+  $current = NULL;
+  foreach ($flat as $key => $current) {
+    if ($key != $book_link['mlid']) {
+      $previous = $current;
+    }
+  }
 
-  return $prev;
+  return $previous;
 }
 
 /**
- * Overrides theme_book_next().
+ * Replaces book_next().
  */
-function borg_book_next($book_link) {
+function _borg_book_next($book_link) {
   $flat = book_get_flat_menu($book_link);
   // Remove child pages from next/prev links.
   foreach ($flat as $key => $item) {
@@ -557,14 +558,10 @@ function borg_book_next($book_link) {
     }
   }
 
-  // Assigning the array to $flat resets the array pointer for use with each().
-  do {
-    list($key, $curr) = each($flat);
-  }
-   while ($key && $key != $book_link['mlid']);
-
-  if ($key == $book_link['mlid']) {
-    return current($flat);
+  foreach ($flat as $key => $current) {
+    if ($key == $book_link['mlid']) {
+      return current($flat);
+    }
   }
 }
 
