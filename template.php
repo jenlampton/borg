@@ -442,7 +442,7 @@ function borg_preprocess_views_view_grid(&$variables) {
     $rows     = $variables['rows'];
 
     // These views have the columns stay wider at smaller screensizes.
-    $sm_grid_views = array('todo');
+    $sm_grid_views = array(); // @todo
 
     if (in_array($view->name, $sm_grid_views)) {
       $column_classes = array(
