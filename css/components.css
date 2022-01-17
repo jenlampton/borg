@@ -462,6 +462,7 @@ article.comment footer a.permalink {
 *******************************************************************************/
 article .content .field-name-field-tags {
   padding: 0;
+  margin-bottom: 0;
 }
 
 .field-name-field-tags {
