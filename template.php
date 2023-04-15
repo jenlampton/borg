@@ -13,7 +13,7 @@
  * Modify the user edit form for usability++
  */
 function borg_form_user_profile_form_alter(&$form, &$form_state) {
-  drupal_add_js('core/misc/vertical-tabs.js');
+  backdrop_add_js('core/misc/vertical-tabs.js');
   $account_fieldset = array(
     '#type'         => 'fieldset',
     '#title'        => t('Change Email or Password'),
