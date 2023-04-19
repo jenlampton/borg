@@ -945,9 +945,6 @@ body.user-form .page-title {
 #user-register-form #edit-contact .form-item label {
   width: auto;
 }
-#user-register-form .form-item div.description {
-  display: none;
-}
 
 #user-register-form .form-item-pass {
   display: block;
