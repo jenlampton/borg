@@ -831,7 +831,6 @@ body.user-form .page-title {
 *******************************************************************************/
 #user-login .help p {
   font-size: 1.5rem; /* 24px */
-  text-align: center;
 }
 #user-login .form-item {
   padding: 15px 0;
@@ -867,7 +866,7 @@ body.user-form .page-title {
   }
   #user-login .form-item label {
     text-align: right;
-    width: 215px;
+    width: 240px;
     padding-right: 15px;
     display: inline-block;
     line-height: 2em;
@@ -875,7 +874,7 @@ body.user-form .page-title {
     white-space: nowrap;
   }
   #user-login .form-item input {
-    width: 390px;
+    width: 345px;
     flex: 1;
   }
   #user-login small {

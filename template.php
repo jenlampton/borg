@@ -84,6 +84,11 @@ function borg_form_user_register_form_alter(&$form, &$form_state) {
     '#markup' => $help,
     '#weight' => -100,
   );
+
+  // Remove description text from username, and email address. In this context
+  // these add no real value and clutter the form.
+  unset($form['account']['name']['#description']);
+  unset($form['account']['mail']['#description']);
 }
 
 /**
