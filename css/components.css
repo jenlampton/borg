@@ -664,53 +664,50 @@ a.feed-icon {
 /*******************************************************************************
  * Newsletter block.
 *******************************************************************************/
-.l-footer .block-block-newsletter,
-.l-footer .block-block-3 {
+.l-footer .block-block-newsletter {
   background-color: #000;
   color: #fff;
   padding: 15px;
   padding-bottom: 15px;
 }
-.block-block-newsletter h2.block-title,
-.block-block-3 h2.block-title {
+.block-block-newsletter h2.block-title {
   font-size: 1.125em;
   font-weight: bold;
   letter-spacing: .4px;
 }
-.block-block-newsletter #mce-EMAIL,
-.block-block-3 #mce-EMAIL {
-  margin-right: 5px;
-  width: 100%;
+.block-block-newsletter .form-type-email label {
+  font-weight: normal;
 }
-.block-block-newsletter input[type="submit"],
-.block-block-3 input[type="submit"] {
+.block-block-newsletter .form-type-checkbox label {
+  margin-left: 0;
+}
+.block-block-newsletter .form-actions {
+  text-align: center;
+}
+.block-block-newsletter input[type="submit"] {
   background-color: #000;
   color: #fff;
   border: 1px solid #fff;
-  margin: 20px 20px 10px 0;
+  margin: 20px 20px 10px 20px;
 }
 
 @media (min-width: 25em) { /* 400px @ 16px font size */
-  .l-footer .block-block-newsletter,
-  .l-footer .block-block-3 {
+  .l-footer .block-block-newsletter {
     padding: 15px 30px;
   }
 }
 @media (min-width: 34em) { /* 544px @ 16px font size -- SM */
-  .l-footer .block-block-newsletter,
-  .l-footer .block-block-3 {
+  .l-footer .block-block-newsletter {
     padding: 10px 20px;
   }
 }
 @media (min-width: 48em) {  /* 768px @ 16px font size  -- MD */
-  .l-footer .block-block-newsletter,
-  .l-footer .block-block-3 {
+  .l-footer .block-block-newsletter {
     padding: 15px 20px 15px 30px;
   }
 }
 @media (min-width: 62em) { /* 992px @ 16px font size -- LG */
-  .l-footer .block-block-newsletter,
-  .l-footer .block-block-3 {
+  .l-footer .block-block-newsletter {
     padding: 30px 50px 20px 40px;
   }
 }
