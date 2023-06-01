@@ -662,14 +662,8 @@ a.feed-icon {
 }
 
 /*******************************************************************************
- * Newsletter block.
+ * Newsletter block -- anywhere
 *******************************************************************************/
-.l-footer .block-borg-signup-newsletter {
-  background-color: #000;
-  color: #fff;
-  padding: 15px;
-  padding-bottom: 15px;
-}
 .block-borg-signup-newsletter h2.block-title {
   font-size: 1.125em;
   font-weight: bold;
@@ -688,7 +682,23 @@ a.feed-icon {
   background-color: #000;
   color: #fff;
   border: 1px solid #fff;
-  margin: 20px 20px 10px 20px;
+  margin: 20px 0 10px 0;
+}
+.block-borg-signup-newsletter .form-actions {
+  text-align: left;
+}
+
+/*******************************************************************************
+ * Newsletter block -- in footer.
+*******************************************************************************/
+.l-footer .block-borg-signup-newsletter {
+  background-color: #000;
+  color: #fff;
+  padding: 15px;
+  padding-bottom: 15px;
+}
+.l-footer .block-borg-signup-newsletter .form-actions {
+  text-align: center;
 }
 
 @media (min-width: 25em) { /* 400px @ 16px font size */
