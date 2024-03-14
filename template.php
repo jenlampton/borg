@@ -84,13 +84,19 @@ function borg_menu_alter(&$items) {
  * @see page.tpl.php
  */
 function borg_preprocess_page(&$variables) {
-  $arg0 = check_plain(arg(0));
-  $arg1 = check_plain(arg(1));
-  $arg2 = check_plain(arg(2));
   // Add the Source Sans Pro font.
-  backdrop_add_css('https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700', array('type' => 'external'));
+  $source_sans = 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700';
+  backdrop_add_css($source_sans, array('type' => 'external'));
   // Add FontAwesome.
-  backdrop_add_js('https://use.fontawesome.com/baf3c35582.js', array('type' => 'external'));
+  $font_awesome = 'https://use.fontawesome.com/baf3c35582.js';
+  backdrop_add_js($font_awesome, array('type' => 'external'));
+  // Add ForkAwesome.
+  $fork_awesome = 'https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css';
+  $attributes = array(
+    'integrity' => 'sha256-XoaMnoYC5TH6/+ihMEnospgm0J1PM/nioxbOUdnM8HY=',
+    'crossorigin' => 'anonymous',
+  );
+  backdrop_add_css($fork_awesome, array('type' => 'external', 'attributes' => $attributes));
 
   // Add a body class based on the admin bar.
   if (module_exists('admin_bar') && user_access('admin_bar')) {
@@ -98,6 +104,9 @@ function borg_preprocess_page(&$variables) {
   }
 
   $path = backdrop_get_path('theme', 'borg');
+  $arg0 = check_plain(arg(0));
+  $arg1 = check_plain(arg(1));
+  $arg2 = check_plain(arg(2));
 
   // Add Flexslider to the front page only.
   if (backdrop_is_front_page()) {
@@ -725,9 +734,9 @@ function borg_menu_tree__user_menu($variables) {
   $output .= '    </li>';
   $output .= '  </ul>';
 
-  $output .= '  <a class="icon" title="Find us on GitHub" href="https://github.com/backdrop/backdrop"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a>';
-  $output .= '  <a class="icon" title="Follow us on Twitter" href="https://twitter.com/backdropcms"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a>';
-  $output .= '  <a class="icon" title="Subscribe to our Newsletter" href="https://backdropcms.org/newsletter"><i class="fa fa-envelope fa-2x" aria-hidden="true"></i></a>';
+  $output .= '  <a class="icon" title="Code on GitHub" href="https://github.com/backdrop/backdrop"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a>';
+  $output .= '  <a class="icon" title="Live Chat on Zulip" href="https://backdrop.zulipchat.com/#narrow/stream/218635-Backdrop"><i class="fa fa-commenting fa-2x" aria-hidden="true"></i></a>';
+  $output .= '  <a class="icon" title="Updates from our Newsletter" href="https://backdropcms.org/newsletter"><i class="fa fa-envelope fa-2x" aria-hidden="true"></i></a>';
 
   $output .= '</nav>';
 
@@ -856,7 +865,7 @@ function borg_on_the_web_item($variables) {
 
   elseif ($type == 'anchor') {
     //$style = 'background: transparent url(' . $icon . ') no-repeat top left;';
-    //$style .= ' -webkit-mask-image: url(' . $icon . ');';
+    $style .= ' -webkit-mask-image: url(' . $icon . ');';
     $style .= ' mask-image: url(' . $icon . ');';
     $attributes['style'] = $style;
   }
