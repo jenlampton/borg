@@ -805,8 +805,10 @@ function borg_on_the_web_item($variables) {
   $type = $config->get('type');
   $target = $config->get('target');
 
-  // Add a new link class for SVG masks.
-  $link_classes[] = 'otw-svg-mask';
+  if ($type == 'anchor') {
+    // Add a new link class for SVG masks.
+    $link_classes[] = 'otw-svg-mask';
+  }
 
   // Determine attributes for the link
   $attributes = array(
