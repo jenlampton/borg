@@ -30,7 +30,7 @@ function borg_form_user_register_form_alter(&$form, &$form_state) {
   // Remove description text from password.
   unset($form['account']['pass']['#description']);
   // Fix the description text for email address.
-  $form['account']['mail']['#description'] = t('This e-mail address is not made public and will only be used if you request to receive a new password.');
+  $form['account']['mail']['#description'] = t('This e-mail address is not made public and will only be used if you choose to receive messages.');
 }
 
 /**
