@@ -196,6 +196,10 @@
   display: block;
   padding: .5em 1em;
 }
+.l-footer .block-menu li a,
+.l-footer .block-menu-menu-footer-menu li:last-child a {
+  padding-right: 0; /* line-up with col-md-6 block above */
+}
 .l-footer .block-menu li a:hover,
 .l-footer .block-menu-menu-footer-menu li a:hover {
   background-color: #F7F7F7;
@@ -206,7 +210,7 @@
   .l-footer .block-menu-menu-footer-menu {
     position: absolute;
     bottom: -70px;
-    right: 0;
+    right: 15px; /* line-up with col-md-6 block above */
     width: 50%;
     padding: 0;
     padding-bottom: 0;
